@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Canvas Demo</title></head>
+    <body>
+        <canvas id="canvas-demo" width="400" height="400">
+             This will be displayed if your browser doesn't
+             support the canvas element. The closing tag is
+             necessary.
+        </canvas>
+        <script src="canvas-demo.js"></script>
+        <script>
+            var c = document.getElementById("canvas-demo");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.fillStyle= "#33C7FF";
+            ctx.fillRect(20, 20, 300, 200); 
+            
+            ctx.moveTo(100,30);
+            ctx.lineTo(200,30);
+            ctx.moveTo(150,30);
+            ctx.lineTo(150,120);
+            ctx.moveTo(100,120);
+            ctx.lineTo(150,120);
+            ctx.stroke();
+            ctx.closePath();
+          
+        </script>
+        
+    </body>
+</html>

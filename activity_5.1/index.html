@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+
+    
+<body>
+    <div id="app">
+        
+    </div>
+    
+    <script>
+    let apiEndpoint = "https://api.nasa.gov/planetary/apod?api_key=LWORYpvC3guNvFRKINBYikQZ5uZcck3zktEvJMMN";
+    let app = document.getElementById("app")
+    
+        
+    fetch(apiEndpoint) 
+    .then ( response => {return response.json()} )
+    .then ( json => {
+        console.log(json.hdurl)
+        let image = document.createElement("img")
+        image.src = json.hdurl
+        app.appendChild(image)
+    } )
+    .catch(err => alert(err)) 
+     
+    </script>
+</body>
+
+</html>
