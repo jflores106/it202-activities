@@ -2,8 +2,7 @@
 <html>
     <head><title>Canvas Demo</title></head>
     <body>
-        <canvas id="c1" width="400" height="400">
-        </canvas>
+        <canvas id="c1" width="400" height="400"></canvas>
         <script src="canvas_scr.js"></script>
         <script>
         var c = document.getElementById("c1");
@@ -21,13 +20,14 @@
         ctx.beginPath();
         ctx.arc(player["x"],player["y"],50,0, Math.PI*2);
         ctx.closePath();
-        ctx.fillStyle= "#33C7FF";
+        ctx.fillStyle= "#33C7FF" ;
+        ctx.fill();
 
         //repeat
         window.requestAnimationFrame(draw);
-}
+        }
 
-    draw();
+        draw();
         </script>
         
     </body>

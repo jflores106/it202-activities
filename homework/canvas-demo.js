@@ -1,3 +1,3 @@
-const demoCanvas = document.getElementById(’canvas-demo’).getContext(’2d’);
+const demoCanvas = document.getElementById('canvas-demo').getContext('d');
 
-window.onload = function() {// make sure to use onload
+window.onload = function() {
