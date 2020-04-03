@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div>
+        <button class="mdc-button mdc-button--raised" id="GRAF">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">GRAF</span>
+        </button>
+    </div>
+    <div>
+        <button class="mdc-button mdc-button--raised" id="SFD">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">SFD</span>
+        </button>
+    </div>
+    <div>
+        <button class="mdc-button mdc-button--raised" id="CSF">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">CSF</span>
+        </button>
+    </div>
+    
+    <script>
+    let apiEndpoint = "https://data.cityofchicago.org/resource/ygr5-vcbg.json";
+      
+
+      document.querySelector("#search")
+        .addEventListener("click",
+            (evt) => {
+                let url = apiEndpoint + "?make=" + 
+                 document.querySelector("#make").value;
+          
+                  console.log(url);
+
+                  fetch(url)
+                  .then ( response => {return response.json()} )
+                  .then ( json => console.log(json) )
+                  .catch(err => alert(err))  
+      }
+      )
+    </script>
+</body>
+
+</html>
