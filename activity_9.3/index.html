@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+</head>
+    
+
+<body>
+    
+    
+        <button class="mdc-button mdc-button--raised data-btn" id="GRAF">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">GRAF</span>
+        </button>
+
+        <button class="mdc-button mdc-button--raised data-btn" id="SFD">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">SFD</span>
+        </button>
+    
+        <button class="mdc-button mdc-button--raised data-btn" id="CSF">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">CSF</span>
+        </button>
+ 
+  
+    <div id="data">
+<ul class="mdc-list">
+  <!-- <li class="mdc-list-item" tabindex="0"> 
+    <span class="mdc-list-item__text">Single-line item</span>
+  </li> 
+  <li class="mdc-list-item">
+    <span class="mdc-list-item__text">Single-line item</span>
+  </li>
+  <li class="mdc-list-item">
+    <span class="mdc-list-item__text">Single-line item</span>
+  </li>
+<li class="mdc-list-item">
+    <span class="mdc-list-item__text">Single-line item</span>
+  </li>
+<li class="mdc-list-item">
+    <span class="mdc-list-item__text">Single-line item</span>
+  </li> -->
+</ul>
+    
+        
+    </div>
+    
+    <script>
+    //let data = documente.querySelector('#data')
+    //let buttn = document.querySelectorAll('.mdc-button')
+    
+        let apiEndpoint = "https://data.cityofchicago.org/resource/v6vf-nfxy.json";
+      
+
+      document.querySelectorAll("#data")
+        .addEventListener("click",
+            (evt) => {
+                let url = apiEndpoint + "?$LIMIT=5";          
+                  console.log(url);
+
+                  fetch(url)
+                  .then ( response => {return response.json()} )
+                  .then ( json => console.log(json) )
+                  .catch(err => alert(err))  
+      }
+      )
+       
+        
+        
+
+const list = new MDCList(document.querySelector('.mdc-list'));
+    </script>
+</body>
+
+</html>
